@@ -1,5 +1,16 @@
 #!/bin/sh -eu
 
+setup_imports() {
+        echo "Creating imports"
+
+        for src in "$@"; do
+                echo "Importing $src"
+
+                mkdir -p $src
+                chmod 777 $src
+        done
+}
+
 start_nfs() {
         /sbin/rpcbind
         /usr/sbin/rpc.mountd -p 42069
@@ -13,5 +24,6 @@ stop_nfs() {
 }
 
 trap stop_nfs SIGTERM SIGINT
+setup_imports "$@"
 start_nfs
 /usr/bin/bash

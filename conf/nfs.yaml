@@ -129,6 +129,9 @@ spec:
             type: Unconfined
         command:
         - /usr/bin/nfs-client.sh
+        args:
+        - /data/nfs4
+        - /data/nfs3
         stdin: true
         tty: true
 ---
