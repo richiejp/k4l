@@ -172,6 +172,16 @@ host$ alias k3strace 'kubectl --kubeconfig k3s.yaml exec deployments/bpftrace --
 host$ k3strace -l "tracepoint:syscalls:sys_enter_*"
 ```
 
+## Redeploy
+
+After updating the container images you can redeploy with
+
+```sh
+host$ k3sctl rollout restart deployments[/<deployment>]
+```
+
+The `imagePullPolicy` in the YAML needs to be set appropriately.
+
 # Background
 
 To automate some Linux kernel network tests we need to create a

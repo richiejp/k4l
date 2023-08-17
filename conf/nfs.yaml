@@ -60,6 +60,7 @@ spec:
       subdomain: nfs
       containers:
       - image: richiejp/suse-scapy:latest
+        imagePullPolicy: Always
         name: server
         securityContext:
           privileged: true
@@ -121,6 +122,7 @@ spec:
       subdomain: nfs
       containers:
       - image: richiejp/suse-scapy:latest
+        imagePullPolicy: Always
         name: scapy-repl
         securityContext:
           privileged: true

@@ -7,7 +7,7 @@ RUN zypper -n in yast2-nfs-server nfs-kernel-server nfswatch utils-libnfs
 # Scapy deps
 RUN zypper -n in python311 python311-pip libpcap-devel git-core tcpdump fish
 # tracing
-RUN zypper -n in strace ltrace perf
+RUN zypper -n in strace ltrace perf wireshark
 
 # Install Scapy
 WORKDIR /root
