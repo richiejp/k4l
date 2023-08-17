@@ -86,6 +86,7 @@ spec:
         - /usr/bin/nfs-server.sh
         args:
         - /data/nfs4
+        - /data/nfs3
         stdin: true
         tty: true
       volumes:
